@@ -54,7 +54,13 @@
                           <!-- <h6 class="card-subtitle mb-2 text-muted">{{i.id}}</h6> -->
                           <h5 class="card-title">{{i.itemname}}</h5>
                           <h6 class="card-subtitle mb-2 text-muted">{{i.itemquantity}}</h6>
-                          <p class="text-success">{{i.itemstatus}}</p>
+                          {% if i.itemstatus == 'BOUGHT' %}
+                          <p class="text-success" >{{i.itemstatus}}</p>
+                          {% elif i.itemstatus == 'PENDING' %}
+                          <p class="text-info">{{i.itemstatus}}</p>
+                          {% elif i.itemstatus == 'NOT AVAILABLE' %}
+                          <p class="text-danger">{{i.itemstatus}}</p>
+                          {% endif %}
                           <a href="{% url 'update' i.id %}">Update Item</a>
                         </div>
                       </div>
