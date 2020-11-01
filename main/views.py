@@ -55,3 +55,17 @@ def update(request, item_id):
 # def updaterecord(request,item_id):
 #
 #     return redirect('/')
+
+def delete(request,item_id):
+    obj=Item.objects.all()
+    obj=Item.objects.filter(pk=item_id).delete()
+    #item_to_be_deleted=objects.filter(Item, pk=item_id)
+    
+    # form=ItemForm(request.POST,instance=item_to_be_deleted)
+    # form.delete()
+    #messages.success(request,"Record deleted Successfully")
+    return redirect(index)
+
+
+
+

@@ -61,7 +61,8 @@
                           {% elif i.itemstatus == 'NOT AVAILABLE' %}
                           <p class="text-danger">{{i.itemstatus}}</p>
                           {% endif %}
-                          <a href="{% url 'update' i.id %}">Update Item</a>
+                          <a href="{% url 'update' i.id %}">Update Item</a><br>
+                          <a href="{% url 'delete' i.id %}">Delete Item</a><br>
                         </div>
                       </div>
                 </div>
